@@ -18,5 +18,17 @@ const userSchema = new mongoose.Schema({
     isVerified: {
         type: Boolean,
         default: false
-    }
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
+    forgetPasswordToken: String,
+    forgetPasswordExpiry: Date,
+    verifyToken: String,
+    verifyTokenExpiry: Date
 })
+
+const User = mongoose.model("users", userSchema)
+
+export default User
